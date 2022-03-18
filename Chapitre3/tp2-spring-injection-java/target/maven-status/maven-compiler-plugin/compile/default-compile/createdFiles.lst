@@ -1,0 +1,7 @@
+tn/esprit/espoline/config/BeansConfiguration.class
+tn/esprit/espoline/service/IDependencyService.class
+tn/esprit/espoline/repository/DependencyRepository.class
+tn/esprit/espoline/repository/IDependencyRepository.class
+tn/esprit/espoline/Main.class
+tn/esprit/espoline/controller/DependencyController.class
+tn/esprit/espoline/service/DependencyService.class

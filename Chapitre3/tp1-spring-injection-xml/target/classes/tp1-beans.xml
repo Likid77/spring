@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dependencyController" class="tn.esprit.espoline.controller.DependencyController">
+		<property name="myService" ref="dependencyService" />
+	</bean>
+
+	<bean id="dependencyService" class="tn.esprit.espoline.service.DependencyService">
+		<property name="myRepository" ref="dependencyRepository" />
+	</bean>
+
+	<bean id="dependencyRepository" class="tn.esprit.espoline.repository.DependencyRepository" />
+
+</beans>

@@ -27,6 +27,7 @@ public class FactureServiceImpl implements FactureService {
 
 	@Override
 	public void cancelFacture(Long id) {
+//		NB : pour l'annulation de la facture, il faut que le champ archivee de la table facture soit mis à true.
 		factureRepository.deleteById(id);
 	}
 }

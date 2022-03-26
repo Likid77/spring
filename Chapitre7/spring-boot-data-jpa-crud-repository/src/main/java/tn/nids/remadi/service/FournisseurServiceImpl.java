@@ -22,6 +22,7 @@ public class FournisseurServiceImpl implements FournisseurService {
 
 	@Override
 	public Fournisseur addFournisseur(Fournisseur f) {
+//		NB: pour l'ajout de fournisseur, il faut créer en même temps le détail fournisseur (entité fournisseur avec l’entité associé detailFournisseur).
 		return fournisseurRepository.save(f);
 	}
 

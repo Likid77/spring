@@ -1,11 +1,13 @@
 package tn.nids.remadi.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
 
 @Entity
 public class CategorieProduit implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -15,9 +17,13 @@ public class CategorieProduit implements Serializable {
 	@Column
 	private String codeCategorieProduit;
 	@Column
-	private String lbelleCategorieProduit;
+	private String libelleCategorieProduit;
 
+	// Associations
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "categorieProduit")
+	private Set<Produit> produits;
 	// Properties
+
 	public Long getIdCategorieProduit() {
 		return idCategorieProduit;
 	}
@@ -34,12 +40,20 @@ public class CategorieProduit implements Serializable {
 		this.codeCategorieProduit = codeCategorieProduit;
 	}
 
-	public String getLbelleCategorieProduit() {
-		return lbelleCategorieProduit;
+	public String getLibelleCategorieProduit() {
+		return libelleCategorieProduit;
 	}
 
-	public void setLbelleCategorieProduit(String lbelleCategorieProduit) {
-		this.lbelleCategorieProduit = lbelleCategorieProduit;
+	public void setLibelleCategorieProduit(String libelleCategorieProduit) {
+		this.libelleCategorieProduit = libelleCategorieProduit;
+	}
+
+	public Set<Produit> getProduits() {
+		return produits;
+	}
+
+	public void setProduits(Set<Produit> produits) {
+		this.produits = produits;
 	}
 
 	public static long getSerialversionuid() {

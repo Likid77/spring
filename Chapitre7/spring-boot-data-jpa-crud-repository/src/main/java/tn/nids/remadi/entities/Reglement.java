@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 public class Reglement implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -20,10 +21,10 @@ public class Reglement implements Serializable {
 	private boolean payee;
 	@Temporal(TemporalType.DATE)
 	private Date dateReglement;
-	
+
 	// Associations
 	@ManyToOne
-	private Facture facture;
+	Facture facture;
 
 	// Properties
 	public Long getIdReglement() {
@@ -64,6 +65,14 @@ public class Reglement implements Serializable {
 
 	public void setDateReglement(Date dateReglement) {
 		this.dateReglement = dateReglement;
+	}
+
+	public Facture getFacture() {
+		return facture;
+	}
+
+	public void setFacture(Facture facture) {
+		this.facture = facture;
 	}
 
 	public static long getSerialversionuid() {

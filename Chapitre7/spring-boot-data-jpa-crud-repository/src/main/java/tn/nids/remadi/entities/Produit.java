@@ -2,10 +2,13 @@ package tn.nids.remadi.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
 public class Produit implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -22,16 +25,14 @@ public class Produit implements Serializable {
 	private Date dateCreation;
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModification;
-	// @OneToOne
-	// private DetailProduit detailProduit;
-	// @ManyToMany(cascade = CascadeType.ALL)
-	// private Set<Fournisseur> fournisseurs;
-	// @ManyToOne
-	// private Rayon rayon;
-	// @ManyToOne
-	// private Stock stock;
-	// @OneToMany(cascade=CascadeType.ALL, mappedBy = "produit")
-	// private Set<DetailFacture> detailFactures;
+
+	// Associations
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "produit")
+	private Set<DetailFacture> detailFactures;
+	@ManyToOne
+	private CategorieProduit categorieProduit;
+	@ManyToOne
+	private Stock stock;
 
 	// Properties
 	public Long getIdProduit() {
@@ -80,6 +81,30 @@ public class Produit implements Serializable {
 
 	public void setDateDerniereModification(Date dateDerniereModification) {
 		this.dateDerniereModification = dateDerniereModification;
+	}
+
+	public Set<DetailFacture> getDetailFactures() {
+		return detailFactures;
+	}
+
+	public void setDetailFactures(Set<DetailFacture> detailFactures) {
+		this.detailFactures = detailFactures;
+	}
+
+	public CategorieProduit getCategorieProduit() {
+		return categorieProduit;
+	}
+
+	public void setCategorieProduit(CategorieProduit categorieProduit) {
+		this.categorieProduit = categorieProduit;
+	}
+
+	public Stock getStock() {
+		return stock;
+	}
+
+	public void setStock(Stock stock) {
+		this.stock = stock;
 	}
 
 	public static long getSerialversionuid() {

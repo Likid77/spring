@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 public class DetailFournisseur implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -19,8 +20,10 @@ public class DetailFournisseur implements Serializable {
 	private String adresse;
 	@Column
 	private String matricule;
-	// @OneToOne(mappedBy = "detailProduit")
-	// private Produit produit;
+
+	// Associations
+	@OneToOne
+	private Fournisseur fournisseur;
 
 	// Properties
 	public Long getIdDetailFournisseur() {
@@ -53,6 +56,14 @@ public class DetailFournisseur implements Serializable {
 
 	public void setMatricule(String matricule) {
 		this.matricule = matricule;
+	}
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
 	}
 
 	public static long getSerialversionuid() {

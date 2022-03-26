@@ -1,11 +1,13 @@
 package tn.nids.remadi.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
 
 @Entity
 public class Operateur implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -18,6 +20,10 @@ public class Operateur implements Serializable {
 	private String prenom;
 	@Column
 	private String password;
+
+	// Associations
+	@OneToMany(cascade = CascadeType.ALL)
+	private Set<Facture> factures;
 
 	// Properties
 	public Long getIdOperateur() {
@@ -50,6 +56,14 @@ public class Operateur implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Set<Facture> getFactures() {
+		return factures;
+	}
+
+	public void setFactures(Set<Facture> factures) {
+		this.factures = factures;
 	}
 
 	public static long getSerialversionuid() {

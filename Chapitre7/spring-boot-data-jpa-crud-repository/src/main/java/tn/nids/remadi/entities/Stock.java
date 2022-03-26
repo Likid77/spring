@@ -1,10 +1,13 @@
 package tn.nids.remadi.entities;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
 public class Stock implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -18,8 +21,9 @@ public class Stock implements Serializable {
 	@Column
 	private String libelleStock;
 
-	// @OneToMany(cascade = CascadeType.ALL, mappedBy = "stock")
-	// private Set<Produit> produits;
+	// Associations
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "stock")
+	private Set<Produit> produits;
 
 	// Properties
 	public Long getIdStock() {
@@ -54,8 +58,15 @@ public class Stock implements Serializable {
 		this.libelleStock = libelleStock;
 	}
 
+	public Set<Produit> getProduits() {
+		return produits;
+	}
+
+	public void setProduits(Set<Produit> produits) {
+		this.produits = produits;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
 }

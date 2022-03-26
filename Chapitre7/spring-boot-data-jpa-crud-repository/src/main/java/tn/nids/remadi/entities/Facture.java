@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 public class Facture implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -15,22 +16,23 @@ public class Facture implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idFacture;
 	@Column
-	private float montantPaye;
+	private float montantRemise;
 	@Column
-	private float montantRestant;
-	@Column
-	private boolean payee;
+	private float montantFacture;
 	@Temporal(TemporalType.DATE)
-	private Date dateReglement;
-	
+	private Date dateCreationFacture;
+	@Temporal(TemporalType.DATE)
+	private Date dateDerniereModification;
+	@Column
+	private boolean archivee;
+
 	// Associations
+	@ManyToOne
+	private Fournisseur fournisseur;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "facture")
+	private Set<DetailFacture> detailsFacture;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "facture")
 	private Set<Reglement> reglements;
-
-	// @ManyToOne
-	// private Client client;
-	// @OneToMany(cascade = CascadeType.ALL, mappedBy = "facture")
-	// private Set<DetailFacture> detailsFacture;
 
 	// Properties
 	public Long getIdFacture() {
@@ -41,36 +43,68 @@ public class Facture implements Serializable {
 		this.idFacture = idFacture;
 	}
 
-	public float getMontantPaye() {
-		return montantPaye;
+	public float getMontantRemise() {
+		return montantRemise;
 	}
 
-	public void setMontantPaye(float montantPaye) {
-		this.montantPaye = montantPaye;
+	public void setMontantRemise(float montantRemise) {
+		this.montantRemise = montantRemise;
 	}
 
-	public float getMontantRestant() {
-		return montantRestant;
+	public float getMontantFacture() {
+		return montantFacture;
 	}
 
-	public void setMontantRestant(float montantRestant) {
-		this.montantRestant = montantRestant;
+	public void setMontantFacture(float montantFacture) {
+		this.montantFacture = montantFacture;
 	}
 
-	public boolean isPayee() {
-		return payee;
+	public Date getDateCreationFacture() {
+		return dateCreationFacture;
 	}
 
-	public void setPayee(boolean payee) {
-		this.payee = payee;
+	public void setDateCreationFacture(Date dateCreationFacture) {
+		this.dateCreationFacture = dateCreationFacture;
 	}
 
-	public Date getDateReglement() {
-		return dateReglement;
+	public Date getDateDerniereModification() {
+		return dateDerniereModification;
 	}
 
-	public void setDateReglement(Date dateReglement) {
-		this.dateReglement = dateReglement;
+	public void setDateDerniereModification(Date dateDerniereModification) {
+		this.dateDerniereModification = dateDerniereModification;
+	}
+
+	public boolean isArchivee() {
+		return archivee;
+	}
+
+	public void setArchivee(boolean archivee) {
+		this.archivee = archivee;
+	}
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+	public Set<DetailFacture> getDetailsFacture() {
+		return detailsFacture;
+	}
+
+	public void setDetailsFacture(Set<DetailFacture> detailsFacture) {
+		this.detailsFacture = detailsFacture;
+	}
+
+	public Set<Reglement> getReglements() {
+		return reglements;
+	}
+
+	public void setReglements(Set<Reglement> reglements) {
+		this.reglements = reglements;
 	}
 
 	public static long getSerialversionuid() {

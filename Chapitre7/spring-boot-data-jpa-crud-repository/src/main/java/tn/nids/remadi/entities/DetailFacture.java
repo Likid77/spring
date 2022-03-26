@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 public class DetailFacture implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -21,10 +22,11 @@ public class DetailFacture implements Serializable {
 	@Column
 	private float montantRemise;
 
-	// @ManyToOne
-	// private Facture facture;
-	// @ManyToOne
-	// private Produit produit;
+	// Associations
+	@ManyToOne
+	private Facture facture;
+	@ManyToOne
+	private Produit produit;
 
 	// Properties
 	public Long getIdDetailFacture() {
@@ -65,6 +67,22 @@ public class DetailFacture implements Serializable {
 
 	public void setMontantRemise(float montantRemise) {
 		this.montantRemise = montantRemise;
+	}
+
+	public Facture getFacture() {
+		return facture;
+	}
+
+	public void setFacture(Facture facture) {
+		this.facture = facture;
+	}
+
+	public Produit getProduit() {
+		return produit;
+	}
+
+	public void setProduit(Produit produit) {
+		this.produit = produit;
 	}
 
 	public static long getSerialversionuid() {

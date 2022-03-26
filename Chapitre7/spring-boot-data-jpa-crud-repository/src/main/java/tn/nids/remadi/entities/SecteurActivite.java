@@ -1,11 +1,13 @@
 package tn.nids.remadi.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
 
 @Entity
 public class SecteurActivite implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	// Attributes
@@ -16,6 +18,10 @@ public class SecteurActivite implements Serializable {
 	private String codeSecteurActivite;
 	@Column
 	private String libelleSecteurActivite;
+
+	// Associations
+	@ManyToMany(cascade = CascadeType.ALL)
+	private Set<Fournisseur> fournisseurs;
 
 	// Properties
 	public Long getIdSecteurActivite() {
@@ -40,6 +46,14 @@ public class SecteurActivite implements Serializable {
 
 	public void setLibelleSecteurActivite(String libelleSecteurActivite) {
 		this.libelleSecteurActivite = libelleSecteurActivite;
+	}
+
+	public Set<Fournisseur> getFournisseurs() {
+		return fournisseurs;
+	}
+
+	public void setFournisseurs(Set<Fournisseur> fournisseurs) {
+		this.fournisseurs = fournisseurs;
 	}
 
 	public static long getSerialversionuid() {

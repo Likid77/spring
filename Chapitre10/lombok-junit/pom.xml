@@ -10,8 +10,8 @@
 	<groupId>tn.nids.remadi</groupId>
 	<artifactId>lombok-junit</artifactId>
 	<version>5.0</version>
-	<name>lombok</name>
-	<description>lombok</description>
+	<name>lombok-junit</name>
+	<description>lombok-junit</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

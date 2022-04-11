@@ -24,6 +24,7 @@ public class OperateurRestController {
 	@Autowired
 	OperateurService operateurService;
 
+//	SELECT
 //	http://localhost:8090/SpringMVC/operateur/retrieve-all-operateurs
 	@GetMapping("/retrieve-all-operateurs")
 	@ResponseBody
@@ -39,6 +40,7 @@ public class OperateurRestController {
 		return operateurService.retrieveOperateur(Id);
 	}
 
+//	INSERT
 //	http://localhost:8090/SpringMVC/operateur/add-operateur
 	@PostMapping("/add-operateur")
 	@ResponseBody
@@ -47,6 +49,7 @@ public class OperateurRestController {
 		return operateur;
 	}
 
+//	UPDATE
 //	http://localhost:8090/SpringMVC/operateur/modify-operateur
 	@PutMapping("/modify-operateur")
 	@ResponseBody
@@ -54,11 +57,11 @@ public class OperateurRestController {
 		return operateurService.updateOperateur(o);
 	}
 
+//	DELETE
 //	http://localhost:8090/SpringMVC/operateur/remove-operateur/{operateur-id}
 	@DeleteMapping("/remove-operateur/{operateur-id}")
 	@ResponseBody
 	public void removeOperateur(@PathVariable("operateur-id") Long Id) {
 		operateurService.removeOperateur(Id);
 	}
-
 }

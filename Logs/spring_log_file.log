@@ -272,3 +272,7 @@ Unconditional classes:
 2022-04-11 03:35:22.148  INFO 99095 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path '/SpringMVC'
 2022-04-11 03:35:22.153  INFO 99095 --- [restartedMain] t.n.r.SpringBootDataJpaEntityApplication : Started SpringBootDataJpaEntityApplication in 0.627 seconds (JVM running for 439.569)
 2022-04-11 03:35:22.154  INFO 99095 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-11 03:38:45.791  INFO 99095 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-04-11 03:38:45.794  INFO 99095 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-11 03:38:45.795  INFO 99095 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-04-11 03:38:45.797  INFO 99095 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

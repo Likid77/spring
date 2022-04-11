@@ -276,3 +276,19 @@ Unconditional classes:
 2022-04-11 03:38:45.794  INFO 99095 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-04-11 03:38:45.795  INFO 99095 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2022-04-11 03:38:45.797  INFO 99095 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-04-11 03:45:49.854  INFO 103443 --- [main] .SpringBootDataJpaEntityApplicationTests : Starting SpringBootDataJpaEntityApplicationTests using Java 17.0.2 on kuromaru-ubuntu with PID 103443 (started by likid in /media/windows11/Users/tahar/Documents/Projects/Eclipse/Spring/Chapitre11/spring-mvc-rest)
+2022-04-11 03:45:49.855  INFO 103443 --- [main] .SpringBootDataJpaEntityApplicationTests : No active profile set, falling back to default profiles: default
+2022-04-11 03:45:50.522  INFO 103443 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-11 03:45:50.598  INFO 103443 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 7 JPA repository interfaces.
+2022-04-11 03:45:51.045  INFO 103443 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-11 03:45:51.094  INFO 103443 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-04-11 03:45:51.241  INFO 103443 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-11 03:45:51.344  INFO 103443 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-11 03:45:51.580  INFO 103443 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-11 03:45:51.593  INFO 103443 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-04-11 03:45:52.607  INFO 103443 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-11 03:45:52.615  INFO 103443 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-11 03:45:53.620  INFO 103443 --- [main] .SpringBootDataJpaEntityApplicationTests : Started SpringBootDataJpaEntityApplicationTests in 4.007 seconds (JVM running for 4.729)
+2022-04-11 03:45:53.773  INFO 103443 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-11 03:45:53.774  INFO 103443 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-11 03:45:53.779  INFO 103443 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
